@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <curl/curl.h>
+#include "curl/include/curl/curl.h"
+//#include <curl/curl.h>
 #include "cJSON/cJSON.h"
 
 struct memory {
@@ -31,8 +32,10 @@ size_t write_callback(char *data, size_t size, size_t nmemb, void *userp){
 int main(){
     struct memory chunk = {0};
     //struct memory chunk = { .response = NULL, .size = 0 };
+    char city[32];
+    printf("Введите город(по английски):");
+    scanf("%s", &city);
     const char *KEY_API = "1ef837b74f994218910125613252904";
-    char *city = "Penza";
     char url[128];
     char response[JSON_MAX_LEN] = "\0";
     CURLcode res;
@@ -54,7 +57,7 @@ int main(){
         return 1;
     }
 
-    //printf("Respone:\n%s\n", chunk.response);
+    printf("Respone:\n%s\n", chunk.response);
 
     cJSON *json = cJSON_Parse(chunk.response);
     cJSON *current = cJSON_GetObjectItem(json, "current");
@@ -64,7 +67,7 @@ int main(){
         printf("Температура:%.1f\n", temp_c->valuedouble);
     }
     else{
-        printf("ERROR");
+        printf("Govno");
     }
 
     cJSON_Delete(json);
