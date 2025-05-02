@@ -159,7 +159,6 @@ int main(){
         const int size = sizeof(cloudy_stat) / sizeof(cloudy_stat[0]);
         for(int i = 0; i < size; i++){
             if(cloud->valueint >= cloudy_stat[i].min && cloud->valueint <= cloudy_stat[i].max){
-            //if(cloud->valuedouble >= cloudy_stat[i].min && cloudy_stat[i].max >= cloud->valuedouble){
                 printf("%s\n", cloudy_stat[i].stat);
                 printf("%s\n", cloudy_stat[i].pic);
             }
