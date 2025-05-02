@@ -1,11 +1,11 @@
 # TUI погода
 **Погода в терминале**
 ## Оглавление
-* [Первый шаг](##Начало)
+* [Первый шаг](#начало)
 * [Билдинг](#building)
-    * [Билдинг на Windows(cmake)](#windows(cmake))
+    * [Билдинг на Windows(cmake)](#windowscmake)
 * [Компиляция](#Compiling)
-    * [Компиляция на Windows(gcc)](#window(gcc))
+    * [Компиляция на Windows(gcc)](#windowsgcc)
     * [Компиляция на Linux](#linux)
 ## Начало
 1. Создать папку через терминал с помощью команды:
@@ -35,7 +35,7 @@ cd weather_c
 ./main.exe
 ```
 # Building
-## windows(cmake)
+## windowscmake
 
 1. На Windows для того чтобы сбилдить через ``cmake`` сначала нужно клонировать репозиторий ``cJSON``:
 ```
@@ -62,7 +62,7 @@ cmake --build .
 ```
 
 # Compiling
-## windows(gcc)
+## windowsgcc
 1. На Windows для того чтобы скомпилировать исполняемый файл через ``gcc`` сначала нужно клонировать репозиторий ``cJSON``:
 ```
 git clone https://github.com/DaveGamble/cJSON.git 
